@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navbar with Logo</title>
-    <link rel="stylesheet" href="/static/navbar.css">
-</head>
+    <link rel="stylesheet" href="/static/navbar.css" />
+  </head>
 
-<body>
+  <body>
     <nav class="navbar">
-        <div class="logo">
-            <img src="/static/devices/apple.svg" alt="Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Mac</a></li>
-            <li><a href="#">iPhones</a></li>
-            <li><a href="#">iPad</a></li>
-            {% if username %}
-            <li><a href="/logout">Logout</a></li>
-            {% else %}
-            <li><a href="/login">Login</a></li>
-            {% endif %}
-        </ul>
-        <div class="cart">
-            <img src="/static/devices/bag-shopping-solid.svg" alt="Logo">
-        </div>
+      <div class="logo">
+        <img src="/static/devices/apple.svg" alt="Logo" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Mac</a></li>
+        <li><a href="#">iPhones</a></li>
+        <li><a href="#">iPad</a></li>
+        {% if username == 'admin' %}
+        <li class="dropdown">
+          <a href="#">Admin Menu</a>
+          <div class="dropdown-content">
+            <a href="#">Add Item</a>
+            <a href="#">Remove Item</a>
+            <a href="#">Get User Info</a>
+          </div>
+        </li>
+        {% endif %} {% if username %}
+        <l1><a href="/checkout">Checkout ({{ cart_total }})</a></l1>
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/login">Login</a></li>
+        {% endif %}
+      </ul>
     </nav>
-
-</body>
-
+  </body>
 </html>

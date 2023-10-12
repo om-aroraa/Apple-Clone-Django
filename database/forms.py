@@ -1,5 +1,5 @@
 import django.forms as forms
-from .models import users, mobiles, ipads, cart, orders
+from .models import mobiles
 
 class deviceForm(forms.ModelForm):
     class Meta:

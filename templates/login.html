@@ -13,9 +13,10 @@
     <div class="main">
 
         <div class="login">
-            <form>
+            <form method="POST">
+                {% csrf_token %}
                 <label>Login</label>
-                <input type="email" name="email" placeholder="Email" required="">
+                <input type="text" name="name" placeholder="Username" required="">
                 <input type="password" name="pswd" placeholder="Password" required="">
                 <button>Login</button>
             </form>

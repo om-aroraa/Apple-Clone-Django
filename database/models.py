@@ -19,11 +19,14 @@ class ipads(models.Model):
     description = models.TextField()
     category = models.CharField(max_length=100)
 
+class MacBooks(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='static/devices/')
+    price = models.IntegerField()
+    description = models.TextField()
+    category = models.CharField(max_length=100)
+
 class cart(models.Model):
     name = models.CharField(max_length=100)
     # Array for storing multiple items
-    items = models.TextField()
-
-class orders(models.Model):
-    name = models.CharField(max_length=100)
-    count = models.IntegerField()
+    items = models.TextField(null=True)

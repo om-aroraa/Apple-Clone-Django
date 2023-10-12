@@ -10,13 +10,16 @@
 
 <body>
     <div class="main">
-
-
+        {% if error %}
+        <div class="error">
+            <span>{{error}}</span>
+        </div>
+        {% endif %}
         <div class="signup">
-            <form>
+            <form method="POST">
+                {% csrf_token %}
                 <label>SignUp</label>
-                <input type="text" name="txt" placeholder="User name" required="">
-                <input type="email" name="email" placeholder="Email" required="">
+                <input type="text" name="name" placeholder="Username" required="">
                 <input type="password" name="pswd" placeholder="Password" required="">
                 <button>Sign Up</button>
             </form>
