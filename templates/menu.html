@@ -14,32 +14,36 @@
     <h1><span>Latest.</span> Take a look what's new right now</h1>
     <div class="main-card">
         <!-- Products -->
+        {% for i in data %}
         <div class="product-card">
-            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <img src="/{{ i.image }}" alt="Product Image">
             <div class="product-details">
-                <p class="model-name">IPHONE 15 PRO</p>
-                <p class="addictions"><span>Titanium</span></p>
-                <p class="price">From &#8377 134900.00</p>
+                <p class="model-name">{{ i.name }}</p>
+                <!-- <p class="addictions"><span>Titanium</span></p> -->
+                <p class="price">For &#8377 {{ i.price }}.00</p>
             </div>
             <div class="add-to-bag">
-                <a href="/product?type={{ type }}?id={{ id }}">Add to Bag</a>
+                <a href="/product?type={{ type }}&id={{ i.id }}">Add to Bag</a>
             </div>
         </div>
-        {% for i in data %}
+        {% endfor %}
+        <!-- {% for i in data %}
             <div class="product-card">
-                <img src="{{ i.image }}" alt="Product Image">
+                <img src="/{{ i.image }}" alt="Product Image">
                 <div class="product-details">
                     <p class="model-name">{{ i.name }}</p>
-                    <p class="addictions"><span>{{ i.keyfeature }}</span></p>
                     <p class="price">&#8377 {{ i.price }}</p>
                 </div>
                 <div class="add-to-bag">
                     <a href="/product?type={{ type }}?id={{ i.id }}">Add to Bag</a>
                 </div>
             </div>
-        {% endfor %}
+        {% endfor %} -->
     </div>
     {% include 'footer.html' %}
+    <script>
+        // Check if product-details is vis
+    </script>
 </body>
 
 </html>

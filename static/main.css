@@ -22,6 +22,15 @@ body {
     /* Adjust the opacity on hover as desired */
 }
 
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+}
+
 .black-space {
     background-color: black;
     height: 100%;
@@ -63,7 +72,7 @@ body {
     justify-content: space-around;
     margin-top: 20px;
     margin-bottom: 20px;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
 
 }
@@ -119,10 +128,15 @@ body {
 }
 
 .price {
+    color: #000;
     font-size: 1.2em;
 
 }
+.price2 {
+    color: #E9E9EA;
+    font-size: 1.2em;
 
+}
 .addictions span {
     display: block;
     font-size: 1.7em;
@@ -152,14 +166,16 @@ body {
     transition: transform 0.3s; 
 }
 
-img {
-
+.product-card img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s;
 }
 
-img:hover {
+.product-card img:hover {
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
 }
 

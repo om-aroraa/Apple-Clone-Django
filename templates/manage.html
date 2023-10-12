@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/manage.css">
+    <title>Manage</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="main">
+        <div class="admin-menu">
+            {% if error %}
+            <div class="error">
+                <span>{{error}}</span>
+            </div>
+            {% endif %}
+            {% if action == 'Add' %}
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <select name="type" required>
+                    <option value="macbooks">Macbooks</option>
+                    <option value="iphones" selected>iPhones</option>
+                    <option value="ipads">iPads</option>
+                </select>
+                <input id="hidden" type="text" name="action" value="{{ action }}" hidden>
+                <input id="button" type="submit" value="Modify!">
+            </form>
+            {% else %}
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="id" placeholder="Enter id of the item to remove" value="">
+                <select name="type" required>
+                    <option value="macbooks">Macbooks</option>
+                    <option value="iphones" selected>iPhones</option>
+                    <option value="ipads">iPads</option>
+                </select>
+                <input id="hidden" type="text" name="action" value="{{ action }}" hidden>
+                <input id="button" type="submit" value="Modify!">
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

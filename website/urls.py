@@ -26,4 +26,6 @@ urlpatterns = [
     path('logout/', logout, name='logout'),
     path('menu/', menu, name='menu'),
     path('checkout/', checkout, name='checkout'),
+    path('product/', product, name='product'),
+    path('manage/', manage, name='manage'),
 ]

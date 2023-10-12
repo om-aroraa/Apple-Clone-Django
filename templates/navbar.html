@@ -21,13 +21,12 @@
         <li class="dropdown">
           <a href="#">Admin Menu</a>
           <div class="dropdown-content">
-            <a href="#">Add Item</a>
-            <a href="#">Remove Item</a>
-            <a href="#">Get User Info</a>
+            <a href="/manage?type=Add">Add Item</a>
+            <a href="/manage?type=Remove">Remove Item</a>
           </div>
         </li>
         {% endif %} {% if username %}
-        <l1><a href="/checkout">Checkout ({{ cart_total }})</a></l1>
+        <l1><a href="/checkout">Checkout ({% if cart_total %}{{ cart_total }}{% else %}0{% endif %})</a></l1>
         <li><a href="/logout">Logout</a></li>
         {% else %}
         <li><a href="/login">Login</a></li>

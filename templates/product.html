@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/product.css">
+    <title>Apple Online Store</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="dett">
+        <p class="name">Buy {{ item.name }}</p>
+        <p class="price">For &#8377 {{ item.price }}</p>
+    </div>
+    <div class="content">
+        <div class="main-card">
+            <!-- Products -->
+            <div class="product-card">
+                <img class="product-images" src="/{{ item.image }}" alt="Product Image">
+            </div>
+        </div>
+        <div class="product-form">
+            <label>Item Descripton</label>
+            <p>{{ item.description }}</p>
+            <button onclick="addtobag('{{ item.id }}', '{{ type }}')">Add to Bag</button>
+            <button><a href="/">Go Back</a></button>
+        </div>
+    </div>
+    <script>
+        function addtobag(id, type) {
+            // Make a POST request to /product
+            // Send the id and type
+            // Redirect to /bag
+
+            // Create a form
+            var form = document.createElement("form");
+            form.setAttribute("method", "POST");
+            form.setAttribute("action", "/product/");
+
+            // Create an input element for id
+            var idInput = document.createElement("input");
+            idInput.setAttribute("type", "text");
+            idInput.setAttribute("name", "id");
+            idInput.setAttribute("value", id);
+
+            // Create an input element for type
+            var typeInput = document.createElement("input");
+            typeInput.setAttribute("type", "text");
+            typeInput.setAttribute("name", "type");
+            typeInput.setAttribute("value", type);
+
+            // Append the input to the form
+            form.appendChild(idInput);
+            form.appendChild(typeInput);
+
+            // Append the form to the body
+            document.body.appendChild(form);
+
+            // Submit the form
+            form.submit();
+
+            // Remove the form
+            document.body.removeChild(form);
+        }
+    </script>
+    {% include 'footer.html' %}
+</body>
+
+</html>

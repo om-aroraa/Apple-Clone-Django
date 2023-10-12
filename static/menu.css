@@ -63,6 +63,7 @@ body {
     /* Allow cards to wrap to the next line */
     /* Distribute cards evenly */
     margin-left: 20px;
+    justify-content: space-evenly;
     /* Add negative margin to compensate for spacing */
 }
 
@@ -71,12 +72,15 @@ body {
     position: relative;
     transition: transform 0.3s;
     flex: 0 0 calc(25% - 20px);
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
     /* Adjust the width to 25% (4 cards in a row) with spacing */
     /* margin-left: 20px; */
     margin-bottom: 20px;
     /* Create spacing between cards */
     box-sizing: border-box;
-    justify-content: center;
+    justify-content: space-evenly;
     /* Include padding and border in the card's total width */
 }
 
@@ -138,13 +142,16 @@ body {
 
 }
 
-img {
+.product-card img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s;
 }
 
-img:hover {
+.product-card img:hover {
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
 }
 

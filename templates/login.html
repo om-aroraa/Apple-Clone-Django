@@ -11,7 +11,11 @@
 
 <body>
     <div class="main">
-
+        {% if error %}
+        <div class="error">
+            <span>{{error}}</span>
+        </div>
+        {% endif %}
         <div class="login">
             <form method="POST">
                 {% csrf_token %}

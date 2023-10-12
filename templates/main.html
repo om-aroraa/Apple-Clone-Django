@@ -16,7 +16,7 @@
             <h3>iPhone 15 Pro</h3>
             <h1>Titanium</h1>
             <p>From ₹21483.00/mo.‡ or ₹134900.00*</p>
-            <img src="/static/devices/iphonebanner.jpg" alt="Banner Image">
+            <img class="banner-image" src="/static/devices/iphonebanner.jpg" alt="Banner Image">
 
         </div>
     </div>
@@ -24,7 +24,7 @@
     <h1><span>Latest.</span> Take a look what's new right now</h1>
     <div class="main-card">
         <!-- Products -->
-        <div class="product-card">
+        <div class="product-card" onclick="openPage('iphones')">
             <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
             <div class="product-details">
                 <p class="model-name">IPHONE 15 PRO</p>
@@ -32,54 +32,47 @@
                 <p class="price">From &#8377 134900.00</p>
             </div>
         </div>
-        <div class="product-card">
-            <img src="/static/devices/iphone15.jpeg" alt="Product Image">
-            <div class="product-details-dark">
-                <p class="model-name-dark">IPHONE 15 </p>
-                <p class="addictions"><span>Newphoria</span></p>
+        <div class="product-card"  onclick="openPage('ipads')">
+            <img src="/static/devices/4-sixteen_nine.webp" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPad </p>
+                <p class="addictions"><span>Pro</span></p>
                 <p class="price2">From &#8377 79900.00</p>
             </div>
         </div>
-        <div class="product-card">
-            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+        <div class="product-card" onclick="openPage('macbooks')">
+            <img src="/static/devices/macair.jpeg" alt="Product Image">
             <div class="product-details">
-                <p class="model-name">IPHONE 15 PRO Max</p>
-                <p class="addictions"><span>Titanium</span></p>
-                <p class="price">From &#8377 164900.00</p>
+                <p class="model-name">MacBook</p>
+                <p class="addictions"><span>Air</span></p>
+                <p class="price2">From &#8377 164900.00</p>
             </div>
         </div>
-        <div class="product-card">
-            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+        <div class="product-card" onclick="openPage('iphones')">
+            <img src="/static/devices/AppleiPhone14Promax.jpeg" alt="Product Image">
             <div class="product-details">
-                <p class="model-name">IPHONE 15 PRO</p>
-                <p class="addictions"><span>Titanium</span></p>
+                <p class="model-name">IPHONE 14 </p>
+                <p class="addictions"><span>Pro Max</span></p>
+                <p class="price2">From &#8377 134900.00</p>
+            </div>
+        </div>
+        <div class="product-card" style="display: none;"  onclick="openPage('ipads')">
+            <img src="/static/devices/iPADMINI.jpeg" alt="Product Image">
+            <div class="product-details-dark">
+                <p class="model-name-dark">iPad</p>
+                <p class="addictions"><span>Mini</span></p>
                 <p class="price">From &#8377 134900.00</p>
             </div>
         </div>
-        <div class="product-card">
-            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+        <div class="product-card" style="display: none;" onclick="openPage('macbooks')">
+            <img src="/static/devices/macpro.webp" alt="Product Image">
             <div class="product-details">
-                <p class="model-name">IPHONE 15 PRO</p>
-                <p class="addictions"><span>Titanium</span></p>
-                <p class="price">From &#8377 134900.00</p>
+                <p class="model-name">MacBook</p>
+                <p class="addictions"><span>Pro</span></p>
+                <p class="price2">From &#8377 134900.00</p>
             </div>
         </div>
-        <div class="product-card">
-            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
-            <div class="product-details">
-                <p class="model-name">IPHONE 15 PRO</p>
-                <p class="addictions"><span>Titanium</span></p>
-                <p class="price">From &#8377 134900.00</p>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
-            <div class="product-details">
-                <p class="model-name">IPHONE 15 PRO</p>
-                <p class="addictions"><span>Titanium</span></p>
-                <p class="price">From &#8377 134900.00</p>
-            </div>
-        </div>
+
         <!-- Arrow to show previous card -->
         <div class="arrow-left">
             <img src="/static/devices/arrow-left.svg" alt="Arrow Left">
@@ -94,7 +87,7 @@
         // Hide product card after showing first 4 cards
         var productCard = document.querySelectorAll('.product-card');
         for (var i = 0; i < productCard.length; i++) {
-            if (i > 3) {
+            if (i > 2) {
                 productCard[i].style.display = 'none';
             }
         }
@@ -102,23 +95,35 @@
         var arrow_right = document.querySelector('.arrow-right');
         var x = 0;
         arrow_right.addEventListener('click', function() {
-            if (x == productCard.length - 4) {
-                x = 0;
+            if (x > productCard.length - 4) {
+                return;
             }
             productCard[x].style.display = 'none';
             x++;
-            productCard[x + 3].style.display = 'block';
+            productCard[x + 2].style.display = 'block';
         })
         // Make it scroll one block on clicking the arrow
         var arrow_left = document.querySelector('.arrow-left');
         arrow_left.addEventListener('click', function() {
-            if (x == 0) {
-                x = productCard.length - 4;
+            if (x == 1) {
+                productCard[4].style.display = 'none';
+                productCard[5].style.display = 'none';
+                productCard[3].style.display = 'none';
+                x = 0
+                productCard[0].style.display = 'block';
+                return;
+            } else if (x == 0) {
+                return;
             }
-            productCard[x + 3].style.display = 'none';
-            x--;
+            productCard[ x + 2].style.display = 'none';
+            x--
             productCard[x].style.display = 'block';
         })
+
+        function openPage(name) {
+            window.location.href = "/menu?type=" + name;
+        }
+            
     </script>
     {% include 'footer.html' %}
 </body>

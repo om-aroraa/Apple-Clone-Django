@@ -10,20 +10,19 @@ body {
 .main-card {
     width: 50%;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
     max-height: 100vh;
-    margin-top: 20px;
     margin-bottom: 20px;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .product-card {
     position: relative;
     display: flex;
     justify-content: space-evenly;
-    flex-direction: row;
+    flex-direction: column;
     transition: transform 0.3s;
     margin: 10px 0;
 }
@@ -33,22 +32,10 @@ body {
 }
 
 .product-images {
-    width: 250px;
-    height: 250px;
+    width: 700px;
+    height: 500px;
     object-fit: cover;
     border-radius: 20px;
-}
-
-.product-details {
-    display: block;
-    margin-top: 10%;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    text-align: center;
-}
-
-.product-details p {
-    margin: 0;
 }
 
 .model-name {
@@ -72,79 +59,42 @@ body {
     text-align: center;
 }
 
-
-.checkout-form input {
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 300px;
-}
-
 .content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
-}
-
-.main-card::-webkit-scrollbar {
-    width: 12px;
-    /* Set the width of the scrollbar */
-}
-
-.main-card::-webkit-scrollbar-thumb {
-    background-color: #555;
-    /* Set the color of the scrollbar thumb */
-    border-radius: 10px;
-    /* Round the corners of the thumb */
-}
-
-.main-card::-webkit-scrollbar-track {
-    background-color: #ddd;
-    /* Set the color of the scrollbar track */
 }
 
 /* FORM CSS */
 
-.checkout-form {
+.product-form {
     display: flex;
+    flex-direction: column;
     margin-right: 10%;
     height: 700px;
     width: 400px;
     justify-content: center;
     align-items: center;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.checkout-form label {
-    color: #000000;
-    font-size: 2.3em;
-    justify-content: center;
-    display: flex;
-    margin-bottom: 30px;
+.product-form label {
+    font-size: 2em;
     font-weight: bold;
-    cursor: pointer;
+    margin: 10px 0;
 }
 
-.checkout-form input, .checkout-form textarea {
-    width: 100%;
-    height: 20px;
-    background: #e0dede;
-    justify-content: center;
-    display: flex;
-    margin: 20px auto;
+.product-form p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
     border-radius: 5px;
-    border: none;
-    outline: none;
-    padding: 10px;
+    border: 1px solid #c1c1c1;
 }
 
-.checkout-form textarea {
-    height: 100px;
-}
-
-.checkout-form button {
-    width: 100%;
+.product-form button {
+    width: 60%;
     height: 40px;
     background: #000000;
     color: #ffffff;
@@ -162,8 +112,8 @@ body {
     transition: 0.5s ease-in;
 }
 
-.checkout-form button:hover {
-    background: #8a8b8c;
+.product-form button:hover {
+    background: #5e5e5e;
     color: #ffffff;
     border: 1px solid #573b8a;
 }
@@ -185,19 +135,30 @@ h1 {
     text-align: center;
 }
 
-.empty-cart {
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-    width: 50%;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
+.dett {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-left: 10px;
 }
 
-.empty-cart p {
-    font-size: 1.5em;
+.dett .name {
+    font-size: 2em;
     font-weight: bold;
-    color: #000000;
-    margin: 10px;
-    text-align: center;
+}
+
+.dett .price {
+    font-size: 1.5em;
+    font-weight: lighter;
+}
+
+.product-form button a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.product-form button a:hover {
+    color: #ffffff;
+    text-decoration: none;
 }
