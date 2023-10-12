@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    background-color: black;
+    transition: opacity 0.3s;
+    /* Add a transition for a smooth effect */
+}
+
+.banner:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
+    /* Adjust the opacity on hover as desired */
+}
+
+.black-space {
+    background-color: black;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+
+}
+
+.text-overlay h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #605D51;
+    margin-bottom: 10px;
+}
+
+.text-overlay h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #A09D97;
+}
+
+.text-overlay p {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.main-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+    max-height: 160vh;
+    margin-bottom: 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+
+.product-card {
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(5px);
+}
+
+.product-images {
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+}
+
+.product-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 10px;
+}
+
+.product-details-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 10px;
+    color: black;
+}
+
+.product-details p,
+.product-details-dark p {
+    margin: 0;
+}
+
+.model-name {
+    font-weight: bold;
+    color: #E9E9EA;
+}
+
+.model-name-dark {
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+}
+
+.price {
+    font-size: 1.2em;
+
+}
+
+.addictions span {
+    display: block;
+    font-size: 1.7em;
+    font-weight: bold;
+}

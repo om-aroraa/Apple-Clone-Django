@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/checkout.css">
+    <title>Apple Online Store</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    
+    <h1><span>Latest.</span> Take a look what's new right now</h1>
+    <div class="main-card">
+        <!-- Products -->
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPHONE 15 PRO</p>
+                <p class="addictions"><span>Titanium</span></p>
+                <p class="price">From &#8377 134900.00</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="/static/devices/iphone15.jpeg" alt="Product Image">
+            <div class="product-details-dark">
+                <p class="model-name-dark">IPHONE 15 </p>
+                <p class="addictions"><span>Newphoria</span></p>
+                <p class="price2">From &#8377 79900.00</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPHONE 15 PRO Max</p>
+                <p class="addictions"><span>Titanium</span></p>
+                <p class="price">From &#8377 164900.00</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPHONE 15 PRO</p>
+                <p class="addictions"><span>Titanium</span></p>
+                <p class="price">From &#8377 134900.00</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPHONE 15 PRO</p>
+                <p class="addictions"><span>Titanium</span></p>
+                <p class="price">From &#8377 134900.00</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPHONE 15 PRO</p>
+                <p class="addictions"><span>Titanium</span></p>
+                <p class="price">From &#8377 134900.00</p>
+            </div>
+        </div>
+        <div class="checkout-form">
+            <form method="POST">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" placeholder="Enter your address" required>
+                <label for="contact">Contact Number</label>
+                <input type="text" name="contact" id="contact" placeholder="Enter your contact number" required>
+            </form>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+
+</html>

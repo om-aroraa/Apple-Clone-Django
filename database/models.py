@@ -9,22 +9,19 @@ class mobiles(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='static/devices/')
     price = models.IntegerField()
-    description = models.TextField()
-    category = models.CharField(max_length=100)
+    keyfeature = models.TextField()
 
 class ipads(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='static/devices/')
     price = models.IntegerField()
-    description = models.TextField()
-    category = models.CharField(max_length=100)
+    keyfeature = models.TextField()
 
 class MacBooks(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='static/devices/')
     price = models.IntegerField()
-    description = models.TextField()
-    category = models.CharField(max_length=100)
+    keyfeature = models.TextField()
 
 class cart(models.Model):
     name = models.CharField(max_length=100)

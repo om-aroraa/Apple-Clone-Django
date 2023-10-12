@@ -1,3 +1,4 @@
+import random
 from database.models import users, mobiles, ipads, cart, MacBooks
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -16,7 +17,7 @@ def home(request):
         cart_total = cart_items 
         return render(request, "main.html", {'username': username, 'cart_total': cart_total})
     else:
-        return render(request, "login.html", { 'error': 'Please login to continue' })
+        return render(request, "main.html")
 
 def login(request):
     if request.method == "POST":
@@ -62,3 +63,35 @@ def signup(request):
             return redirect('/')
         else:
             return render(request, "signup.html")
+        
+def menu(request):
+    username = request.session.get('username')
+    type = request.GET.get('type')
+    data = None
+    if type == 'iphones':
+        items = mobiles.objects.all()
+        data = list(items)
+    elif type == 'ipads':
+        items = ipads.objects.all()
+        data = list(items)
+    elif type == 'macbooks':
+        items = MacBooks.objects.all()
+        data = list(items)
+    else:
+        type = 'iphones'
+        items = mobiles.objects.all()
+        data = list(items)
+    if username:
+        c = cart.objects.get(name=username)
+        cart_items = c.items
+        if cart_items:
+            cart_items = len(cart_items.split(','))
+        else:
+            cart_items = 0
+        cart_total = cart_items 
+        return render(request, "menu.html", {'username': username, 'cart_total': cart_total, 'data': data, 'type': type})
+    else:
+        return render(request, "menu.html", {'data': data, 'type': type})
+
+def checkout(request):
+    return render(request, "checkout.html")
