@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Logo</title>
+    <link rel="stylesheet" href="/static/navbar.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/static/devices/apple.svg" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Mac</a></li>
+            <li><a href="#">iPhones</a></li>
+            <li><a href="#">iPad</a></li>
+            {% if username %}
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="#">Login</a></li>
+            {% endif %}
+        </ul>
+        <div class="cart">
+            <img src="/static/devices/bag-shopping-solid.svg" alt="Logo">
+        </div>
+    </nav>
+
+</body>
+
+</html>

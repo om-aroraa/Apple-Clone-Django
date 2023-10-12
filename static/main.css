@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+
+.main-card {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 20%;
+
+}
+.product-card {
+    position: relative;
+    transition: transform 0.3s;
+    /* Added transition property for smooth effect */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    /* Move the card up by 5 pixels on hover */
+}
+
+.product-details-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 10px;
+    
+}
+
+.product-details-1 p {
+    margin: 0;
+}
+
+.product-details-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.product-details-2 p {
+    margin: 0;
+}
+
+.model-name {
+    font-weight: bold;
+}
+
+.price {
+    font-size: 1.2em;
+}
+
+.addictions span {
+    display: block;
+    font-size: 1em;
+}
+
+img {
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+}
+
+img:hover {
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
+}
