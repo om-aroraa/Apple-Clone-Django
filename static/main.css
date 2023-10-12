@@ -60,37 +60,34 @@ body {
 
 .main-card {
     display: flex;
-    justify-content: space-evenly;
-    border-radius: 20%;
+    justify-content: space-around;
     margin-top: 20px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
 }
 
-.product-card1 {
+.product-card {
     position: relative;
     transition: transform 0.3s;
 }
 
-.product-card1:hover {
-    transform: translateY(-5px);
+.product-card:hover {
+    transform: translateY(5px);
 }
 
-.product-card2 {
-    position: relative;
-    transition: transform 0.3s;
+.product-images {
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
 }
 
-.product-card2:hover {
-    transform: translateY(-5px);
-}
-.product-details-2{
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: black;
-    padding: 10px;
-}
-.product-details-1
- {
+.product-details {
     position: absolute;
     top: 0;
     left: 0;
@@ -98,14 +95,27 @@ body {
     padding: 10px;
 }
 
-.product-details-1 p,
-.product-details-2 p {
+.product-details-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 10px;
+    color: black;
+}
+
+.product-details p, .product-details-dark p {
     margin: 0;
 }
 
 .model-name {
     font-weight: bold;
-    color:#E9E9EA;
+    color: #E9E9EA;
+}
+
+.model-name-dark {
+    font-weight: bold;
+    color: rgb(49, 49, 49);
 }
 
 .price {
@@ -118,29 +128,38 @@ body {
     font-size: 1.7em;
     font-weight: bold;
 }
-.model-name2 {
-    font-weight: bold;
-    color: #000000;
-}
 
-.price2 {
-    font-size: 1.2em;
-
-}
-
-.addictions2 span {
+.arrow-right {
+    position: absolute;
+    right: 0;
     display: block;
-    font-size: 1.7em;
-    font-weight: bold;
+    margin-top: 200px;
+    transition: transform 0.3s;
 }
-.iphone-images img {
+
+.arrow-left img, .arrow-right img {
+    width: 50px;
+    height: 50px;
+    filter: opacity(0.5) drop-shadow(0px 0px 0px rgba(170, 170, 170, 0.5));
+    transition: filter 0.3s;
+}
+
+.arrow-left {
+    position: absolute;
+    left: 0;
+    display: block;
+    margin-top: 200px;
+    transition: transform 0.3s; 
+}
+
+img {
 
     border-radius: 20px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s;
 }
 
-.iphone-images img:hover {
+img:hover {
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
 }
 
@@ -148,6 +167,17 @@ body {
 @media screen and (max-width: 768px) {
     .banner {
         height: 300px;
+    }
+}
+
+/* Media Query for laptop with 15inch screen */
+@media screen and (max-width: 1600px) {
+    .banner {
+        height: 400px;
+    }
+
+    .product-card4 {
+        display: none;
     }
 }
 

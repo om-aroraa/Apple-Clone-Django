@@ -20,39 +20,106 @@
 
         </div>
     </div>
-
-    <h1><span>The latest.</span> Take a look what's new right now</h1>
-
+    
+    <h1><span>Latest.</span> Take a look what's new right now</h1>
     <div class="main-card">
-
-        <div class="product-card1">
-            <img class="iphone-images" src="/static/devices/iphone15pro.jpeg" alt="Product 1">
-            <div class="product-details-1">
+        <!-- Products -->
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
                 <p class="model-name">IPHONE 15 PRO</p>
                 <p class="addictions"><span>Titanium</span></p>
                 <p class="price">From &#8377 134900.00</p>
             </div>
         </div>
-        <div class="product-card2">
-            <img src="/static/devices/iphone15.jpeg" alt="Product 1">
-            <div class="product-details-2">
-                <p class="model-name2">IPHONE 15 </p>
-                <p class="addictions2"><span>Newphoria</span></p>
+        <div class="product-card">
+            <img src="/static/devices/iphone15.jpeg" alt="Product Image">
+            <div class="product-details-dark">
+                <p class="model-name-dark">IPHONE 15 </p>
+                <p class="addictions"><span>Newphoria</span></p>
                 <p class="price2">From &#8377 79900.00</p>
             </div>
         </div>
-        <div class="product-card1">
-            <img src="/static/devices/iphone15pro.jpeg" alt="Product 1">
-            <div class="product-details-1">
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPHONE 15 PRO Max</p>
+                <p class="addictions"><span>Titanium</span></p>
+                <p class="price">From &#8377 164900.00</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
                 <p class="model-name">IPHONE 15 PRO</p>
                 <p class="addictions"><span>Titanium</span></p>
                 <p class="price">From &#8377 134900.00</p>
             </div>
         </div>
-
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPHONE 15 PRO</p>
+                <p class="addictions"><span>Titanium</span></p>
+                <p class="price">From &#8377 134900.00</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPHONE 15 PRO</p>
+                <p class="addictions"><span>Titanium</span></p>
+                <p class="price">From &#8377 134900.00</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="/static/devices/iphone15pro.jpeg" alt="Product Image">
+            <div class="product-details">
+                <p class="model-name">IPHONE 15 PRO</p>
+                <p class="addictions"><span>Titanium</span></p>
+                <p class="price">From &#8377 134900.00</p>
+            </div>
+        </div>
+        <!-- Arrow to show previous card -->
+        <div class="arrow-left">
+            <img src="/static/devices/arrow-left.svg" alt="Arrow Left">
+        </div>
+        <!-- Arrow to show next card -->
+        <div class="arrow-right">
+            <img src="/static/devices/arrow-right.svg" alt="Arrow Right">
+        </div>
     </div>
 
-
+    <script type="text/javascript">
+        // Hide product card after showing first 4 cards
+        var productCard = document.querySelectorAll('.product-card');
+        for (var i = 0; i < productCard.length; i++) {
+            if (i > 3) {
+                productCard[i].style.display = 'none';
+            }
+        }
+        // Make it scroll one block on clicking the arrow
+        var arrow_right = document.querySelector('.arrow-right');
+        var x = 0;
+        arrow_right.addEventListener('click', function() {
+            if (x == productCard.length - 4) {
+                x = 0;
+            }
+            productCard[x].style.display = 'none';
+            x++;
+            productCard[x + 3].style.display = 'block';
+        })
+        // Make it scroll one block on clicking the arrow
+        var arrow_left = document.querySelector('.arrow-left');
+        arrow_left.addEventListener('click', function() {
+            if (x == 0) {
+                x = productCard.length - 4;
+            }
+            productCard[x + 3].style.display = 'none';
+            x--;
+            productCard[x].style.display = 'block';
+        })
+    </script>
     {% include 'footer.html' %}
 </body>
 
