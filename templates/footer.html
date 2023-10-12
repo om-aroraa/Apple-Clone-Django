@@ -12,26 +12,26 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
-                <h3>Shop & Learn</h3>
-                <ul>
-                    <li>Mac</li>
-                    <li>iPhones</li>
-                    <li>iPad</li>
+                <h3 id="footer-section-1">Shop & Learn</h3>
+                <ul id="footer-section-1">
+                    <li><a href="/menu?type=iphones">iPhone</a></li>
+                    <li><a href="/menu?type=macbooks">MacBook</a></li>
+                    <li><a href="/menu?type=ipads">iPad</a></li>
                 </ul>
             </div>
             <div class="footer-section account">
-                <h3>My Account</h3>
-                <ul>
-                    <li>Login</li>
-                    <li>Sign In</li>
+                <h3 id="footer-section-2">My Account</h3>
+                {% if username %}
+                <ul id="footer-section-2">
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/checkout">Cart</a></li>
                 </ul>
-            </div>
-            <div class="footer-section support">
-                <h3>Support & Feedback</h3>
-                <ul>
-                    <li>Contact Us</li>
-                    <li>Provide Feedback</li>
+                {% else %}
+                <ul id="footer-section-2">
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Sign Up</a></li>
                 </ul>
+                {% endif %}
             </div>
         </div>
     </footer>
