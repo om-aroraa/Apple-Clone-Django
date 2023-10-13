@@ -17,7 +17,7 @@
         </div>
         {% endif %}
         <div class="login">
-            <form method="POST">
+            <form method="POST" action="/login/">
                 {% csrf_token %}
                 <label>Login</label>
                 <input type="text" name="name" placeholder="Username" required="">

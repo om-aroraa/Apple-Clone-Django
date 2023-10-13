@@ -74,13 +74,14 @@ body {
     margin-bottom: 20px;
     overflow-x: hidden;
     overflow-y: hidden;
-
 }
 
 .product-card {
     position: relative;
-    transition: transform 0.3s;
+    transition: all 0.3s;
 }
+
+/* Add transition when product card display is changed */
 
 .product-card:hover {
     transform: translateY(5px);
@@ -137,6 +138,17 @@ body {
     font-size: 1.2em;
 
 }
+
+.grey {
+    color: rgb(105, 103, 103);
+}
+
+.latest {
+    color: #000000;
+    text-align: center;
+    font-size: large;
+}
+
 .addictions span {
     display: block;
     font-size: 1.7em;
